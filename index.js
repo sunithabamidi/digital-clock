@@ -13,7 +13,8 @@ function updateTime() {
 function convertToDate(date) {
   let dd = date.getDate();
   let yyyy = date.getFullYear();
-  let mm = date.getMonth();
+  let mm = date.getMonth() + 1;
+  if (dd < 10 && mm < 10) return "0" + dd + "-" + "0" + mm + "-" + yyyy;
   if (dd < 10) return "0" + dd + "-" + mm + "-" + yyyy;
   if (mm < 10) return dd + "-" + "0" + mm + "-" + yyyy;
   return dd + "-" + mm + "-" + yyyy;
